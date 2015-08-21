@@ -66,7 +66,7 @@ class PitayaSCPI:
 		assert len(ch1) == len(ch2)
 		# query sample rate and offset
 		fs = float(self.query("ACQ:SRA:HZ?"))
-		t0 = float(p.query("ACQ:TRIG:DLY?")) - len(ch1)/2.0
+		t0 = float(self.query("ACQ:TRIG:DLY?")) - len(ch1)/2.0
 		# make time array
 		t = (np.arange(len(ch1))+t0) / fs
 		# convert to big array
